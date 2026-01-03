@@ -1,39 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Upload MP4 Video</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 30px;
-        }
-        video {
-            margin-top: 20px;
-            max-width: 100%;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Jebin Video</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+  }
+
+  /* Header */
+  .header {
+    background: #08b3ad;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .logo img {
+    width: 70%;
+  }
+
+  .title {
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  /* Table */
+  table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+  }
+
+  td {
+    background: #fffaa0;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .play-cell {
+    width: 60px;
+    text-align: center;
+  }
+
+  /* Play Button */
+  .play-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #e53935;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .play-btn:hover {
+    background: #c62828;
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .title {
+      font-size: 26px;
+    }
+
+    td {
+      font-size: 18px;
+    }
+  }
+</style>
 </head>
+
 <body>
 
-<h2>Select MP4 Video</h2>
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">
+    <img src="1.png" alt="Logo">
+  </div>
+  <div class="title">Jebin Video</div>
+</div>
 
-<input type="file" id="videoInput" accept="video/mp4">
+<!-- VIDEO LIST -->
+<table>
+  <tr>
+    <td>Fathers Death Aniversary</td>
+    <td class="play-cell">
+      <a href="2.mp4" class="play-btn">▶</a>
+    </td>
+  </tr>
 
-<video id="videoPlayer" controls></video>
+  <tr>
+    <td>Video Title 2</td>
+    <td class="play-cell">
+      <a href="videos/video2.mp4" class="play-btn">▶</a>
+    </td>
+  </tr>
 
-<script>
-document.getElementById("videoInput").addEventListener("change", function (event) {
-    const file = event.target.files[0];
+  <tr>
+    <td>Video Title 3</td>
+    <td class="play-cell">
+      <a href="videos/video3.mp4" class="play-btn">▶</a>
+    </td>
+  </tr>
 
-    if (file && file.type === "video/mp4") {
-        const videoURL = URL.createObjectURL(file);
-        document.getElementById("videoPlayer").src = videoURL;
-    } else {
-        alert("Please select an MP4 video");
-    }
-});
-</script>
+  <tr>
+    <td>Video Title 4</td>
+    <td class="play-cell">
+      <a href="videos/video4.mp4" class="play-btn">▶</a>
+    </td>
+  </tr>
+</table>
 
 </body>
 </html>
