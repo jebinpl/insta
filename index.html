@@ -10,15 +10,31 @@
     margin: 0;
     font-family: Arial, sans-serif;
     background: #ffffff;
+    padding-top: 110px;
   }
 
+  
   /* Header */
-  .header {
-    background: #08b3ad;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-  }
+ .header {
+  background: #08b3ad;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  transition: box-shadow 0.3s ease;
+}
+
+  .header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
 
   .logo {
     width: 80px;
@@ -87,6 +103,11 @@
     .title {
       font-size: 26px;
     }
+
+    body {
+    padding-top: 95px;   /* just add this */
+  }
+}
 
     td {
       font-size: 18px;
@@ -160,8 +181,22 @@
   </tr>
 </table>
 
+  <script>
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector(".header");
+
+    if (window.scrollY > 10) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  
 </body>
 </html>
+
 
 
 
