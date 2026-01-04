@@ -98,6 +98,21 @@
     background: #c62828;
   }
 
+  .title span {
+  display: block;   /* forces new line */
+}
+
+.line1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.line2 {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+
   /* Mobile */
   @media (max-width: 600px) {
     .title {
@@ -123,7 +138,11 @@
   <div class="logo">
     <img src="1.png" alt="Logo">
   </div>
-  <div class="title">Jerusalem City of Truth</div>
+  <div class="title">
+  <span class="line1">Jerusalem</span>
+  <span class="line2">City of Truth</span>
+</div>
+
 </div>
 
 <!-- VIDEO LIST -->
@@ -214,6 +233,7 @@
   
 </body>
 </html>
+
 
 
 
