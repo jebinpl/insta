@@ -270,9 +270,21 @@
     <button onclick="closePopup()">OK</button>
   </div>
 </div>
-  
+
+<script>
+  function closePopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+  }
+
+  // Show popup on page load
+  window.onload = function () {
+    document.getElementById("popupOverlay").style.display = "flex";
+  };
+</script>
+   
 </body>
 </html>
+
 
 
 
